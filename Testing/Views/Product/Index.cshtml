@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Product>
+
+<h2>Products</h2>
+<br />
+
+<div style="display: block">
+    <a href="/Product/InsertProduct/">Create a New Product</a>
+</div>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>On Sale</th>
+        <th>Stock Level</th>
+    </tr>
+
+    @foreach (var prod in Model)
+    {
+        <tr>
+            <td><a href="/Product/ViewProduct/@prod.ProductID">@prod.ProductID</a></td>
+            <td>@prod.Name</td>
+            <td>@prod.Price</td>
+            <td>@prod.CategoryID</td>
+            <td>@prod.OnSale</td>
+            <td>@prod.StockLevel</td>
+        </tr>
+    }
+</table>
